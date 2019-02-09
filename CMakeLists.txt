@@ -42,7 +42,7 @@ SET(SOURCE_FILES ${FILES})
 
 #============================================================================================
 
-ADD_EXECUTABLE(${CMAKE_PROJECT_NAME} main.c uart.c uart.h)
+ADD_EXECUTABLE(${CMAKE_PROJECT_NAME} main.c uart.h uart.c)
 
 ADD_CUSTOM_COMMAND(TARGET ${CMAKE_PROJECT_NAME} POST_BUILD COMMAND ${AVRBIN}/${AVROBJCOPY} -O ihex -R .eeprom ${CMAKE_RUNTIME_OUTPUT_DIRECTORY}/${CMAKE_PROJECT_NAME}.elf ${CMAKE_RUNTIME_OUTPUT_DIRECTORY}/${CMAKE_PROJECT_NAME}.hex)
 
